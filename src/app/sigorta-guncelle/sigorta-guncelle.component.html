@@ -1,0 +1,18 @@
+<div class="col-md-5 offset-md-3">
+  <h3>Sigorta Güncelle</h3>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>SİGORTA TÜRÜ</label>
+      <input type="text" class="form-control" id="sigorta_ad" [(ngModel)]="sigorta.sigorta_tur" name="sigorta_tur">
+    </div>
+
+    <div class="form-group">
+      <label>SÜRESİ</label>
+      <input type="text" class="form-control" id="sigorta_zaman" [(ngModel)]="sigorta.sigorta_zaman" name="sigorta_zaman">
+    </div>
+
+    <button class="btn btn-success" type="submit">Güncelle</button>
+
+  </form>
+</div>

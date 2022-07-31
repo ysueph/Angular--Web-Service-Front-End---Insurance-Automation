@@ -1,0 +1,23 @@
+<div class="col-md-5 offset-md-3">
+  <h3>Müşteri Güncelle</h3>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>AD-SOYAD</label>
+      <input type="text" class="form-control" id="musteri_ad" [(ngModel)]="musteri.musteri_ad" name="musteri_ad">
+    </div>
+
+    <div class="form-group">
+      <label>KİMLİK</label>
+      <input type="text" class="form-control" id="musteri_kimlik" [(ngModel)]="musteri.musteri_kimlik" name="musteri_kimlik">
+    </div>
+
+    <div class="form-group">
+      <label>PLAKA</label>
+      <input type="text" class="form-control" id="musteri_plaka" [(ngModel)]="musteri.musteri_plaka" name="musteri_plaka">
+    </div>
+
+    <button class="btn btn-success" type="submit">GÜNCELLE</button>
+
+  </form>
+</div>

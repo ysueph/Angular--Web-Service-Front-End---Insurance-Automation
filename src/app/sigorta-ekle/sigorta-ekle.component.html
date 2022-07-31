@@ -1,0 +1,26 @@
+<div class="col-md-5 offset-md-3">
+  <h3>Sigorta Ekle</h3>
+  <br>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>SİGORTA TÜRÜ</label>
+      <input type="text" class="form-control" id="sigorta_ad"
+             [(ngModel)]="sigorta.sigorta_tur" name="sigorta_tur"
+              >
+    </div>
+    <br>
+    <div class="form-group">
+      <label>SÜRESİ</label>
+      <input type="text" class="form-control" id="sigorta_zaman"
+             [(ngModel)]="sigorta.sigorta_zaman" name="sigorta_zaman"
+             placeholder="Ay ve yıl olarak giriniz.">
+      <div class="md-errors-spacer">
+        örnek: 1 Yıl, 3 Ay...
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-success" type="submit">EKLE</button>
+
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<h2>Şirket Listesi</h2>
+<br>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>ŞİRKET ADI</th>
+    <th>FİYAT</th>
+    <th>AYARLAR</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let sirket of sirketler" >
+    <td>{{sirket.sirketId}}</td>
+    <td>{{sirket.sirket_ad}}</td>
+    <td >{{sirket.fiyat}}</td>
+    <td><button (click)="sirketGuncelle(sirket.sirketId)" class="btn btn-info">Güncelle</button>
+      <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <button (click)="sirketSil(sirket.sirketId)" class="btn btn-danger" >Sil</button></td>
+
+  </tr>
+  </tbody>
+</table>

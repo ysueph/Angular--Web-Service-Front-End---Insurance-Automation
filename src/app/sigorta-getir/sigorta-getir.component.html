@@ -1,0 +1,23 @@
+<h2>Sigorta Listesi</h2>
+<br>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>SİGORTA TÜRÜ</th>
+    <th>SÜRESİ</th>
+    <th colspan="2">AYARLAR</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let sigorta of sigortalar">
+    <td>{{sigorta.sigortaId}}</td>
+    <td>{{sigorta.sigorta_tur}}</td>
+    <td>{{sigorta.sigorta_zaman}}</td>
+    <td><button (click)="sigortaGuncelle(sigorta.sigortaId)" class="btn btn-info">Güncelle</button>
+      <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <button (click)="sigortaSil(sigorta.sigortaId)" class="btn btn-danger" >Sil</button></td>
+
+  </tr>
+  </tbody>
+</table>

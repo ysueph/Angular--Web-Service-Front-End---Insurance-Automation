@@ -1,0 +1,134 @@
+<div class="col-md-5 offset-md-2" style="width: 100%" >
+<h3>Müşteri Ekle</h3>
+  <br>
+
+<form (ngSubmit)="onSubmit()">
+
+<table style="width: 60%; height: 100%" >
+  <tbody>
+  <td>
+<tr>
+  <div class="form-group"  >
+  <label >AD-SOYAD</label>
+  <input type="text" class="form-control "  id="musteri_ad"
+         [(ngModel)]="musteri.musteri_ad" name="musteri_ad"
+         placeholder="Ad-Soyad giriniz."
+         #musteri_ad="ngModel"
+         required
+         pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)">
+
+    <div class="md-errors-spacer" [hidden]="musteri_ad.valid || musteri_ad.untouched ">
+      <div class="alert-danger" *ngIf="musteri_ad.errors && musteri_ad.errors['required']">
+        *Bu alan boş bırakılamaz.
+      </div>
+      <div class="alert-warning" *ngIf="musteri_ad.errors && musteri_ad.errors['pattern']">
+        *Lütfen geçerli ad-soyad giriniz.
+      </div>
+    </div>
+  </div>
+</tr>
+
+    <tr>
+      <br>
+  <div class="form-group" >
+    <label >KİMLİK</label>
+    <input type="text" class="form-control"  id="musteri_kimlik"
+           [(ngModel)]="musteri.musteri_kimlik" name="musteri_kimlik"
+           placeholder="TC kimlik numarası giriniz."
+           #musteri_kimlik="ngModel"
+           required
+           pattern="^[1-9]{1}[0-9]{9}[02468]{1}$">
+
+    <div class="md-errors-spacer" [hidden]="musteri_kimlik.valid || musteri_kimlik.untouched">
+      <div class="alert-danger" *ngIf="musteri_kimlik.errors && musteri_kimlik.errors['required']">
+        *Bu alan boş bırakılamaz.
+      </div>
+      <div class="alert-warning" *ngIf="musteri_kimlik.errors && musteri_kimlik.errors['pattern']">
+        *Lütfen geçerli kimlik numarası giriniz.
+      </div>
+    </div>
+  </div>
+    </tr>
+
+    <tr>
+      <br>
+      <div class="form-group">
+      <label >PLAKA</label>
+      <input type="text" class="form-control" id="musteri_plaka"
+             [(ngModel)]="musteri.musteri_plaka" name="musteri_plaka"
+             placeholder="Plaka giriniz."
+             #musteri_plaka="ngModel"
+             required
+             pattern="^(0[1-9]|[1-7][0-9]|8[01])((\s[A-Z]\s)(\d{4,5})|(\s[A-Z]{2}\s)(\d{3,4})|(\s[A-Z]{3}\s)(\d{2,3}))$">
+
+      <div class="md-errors-spacer" [hidden]="musteri_plaka.valid || musteri_plaka.untouched">
+        <div class="alert-danger" *ngIf="musteri_plaka.errors && musteri_plaka.errors['required']">
+          *Bu alan boş bırakılamaz.
+        </div>
+        <div class="alert-warning" *ngIf="musteri_plaka.errors && musteri_plaka.errors['pattern']">
+          *Lütfen geçerli bir plaka giriniz.
+        </div>
+      </div>
+      <div class="md-errors-spacer">
+        örnek: 34 AAA 65 -- 55 AAA 987 -- 34 A 1234 -- 65 A 85246 -- 77 AA 999
+      </div>
+      </div>
+
+    </tr>
+
+    <tr>
+
+      <br>
+      <button class="btn btn-success" type="submit" >EKLE</button>
+
+    </tr>
+
+  </td>
+
+  <div class="form-group">
+  <td >
+
+    <tr >
+
+    <div>
+    <label >Sigorta Seçiniz :</label>
+    <select id="sigorta" name="sigorta" [(ngModel)]="musteri.sigorta_tur"
+            class="form-select">
+      <option *ngFor="let sigorta of sigortalar">
+         {{sigorta.sigorta_tur}} ----- {{sigorta.sigorta_zaman}}
+      </option>
+    </select>
+    </div>
+
+    </tr>
+
+    <br>
+
+    <tr >
+
+  <div >
+    <label >Şirket Seçiniz :</label>
+    <select id="sirket" name="sirket" [(ngModel)]="musteri.sirket_ad "
+            class="form-select">
+      <option *ngFor="let sirket of sirketler">
+        {{sirket.sirket_ad}} ----- {{sirket.fiyat}} TL
+      </option>
+    </select>
+
+  </div>
+
+    </tr>
+
+  </td>
+
+  </div>
+
+
+  </tbody>
+</table>
+
+</form>
+
+
+
+</div>

@@ -1,0 +1,22 @@
+<div class="col-md-5 offset-md-3">
+  <h3>Şirket Ekle</h3>
+  <br>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>ŞİRKET ADI</label>
+      <input type="text" class="form-control" id="sirket_ad" [(ngModel)]="sirket.sirket_ad" name="sirket_ad">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label>FİYAT</label>
+      <input type="text" class="form-control" id="fiyat" [(ngModel)]="sirket.fiyat" name="fiyat"
+             placeholder="Sadece sayı giriniz." >
+    </div>
+    <br>
+    <button class="btn btn-success" type="submit">EKLE</button>
+
+  </form>
+
+</div>

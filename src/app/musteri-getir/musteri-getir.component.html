@@ -1,0 +1,27 @@
+<h2>Müşteri Listesi</h2>
+<br>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>AD</th>
+    <th>KİMLİK</th>
+    <th>PLAKA</th>
+    <th colspan="2">AYARLAR</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let musteri of musteriler">
+    <td>{{musteri.musteriId}}</td>
+    <td>{{musteri.musteri_ad}}</td>
+    <td>{{musteri.musteri_kimlik}}</td>
+    <td>{{musteri.musteri_plaka}}</td>
+    <td><button (click)="musteriGuncelle(musteri.musteriId)" class="btn btn-info">Güncelle</button>
+      <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <button (click)="musteriSil(musteri.musteriId)" class="btn btn-danger" >Sil</button>
+    <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <button (click)="musteriDetay(musteri.musteriId)" class="btn btn-warning" >Detay</button></td>
+
+  </tr>
+  </tbody>
+</table>
